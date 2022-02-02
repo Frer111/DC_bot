@@ -1,4 +1,5 @@
 import discord
+import time
 from discord.ext import commands
 
 bot = commands.Bot(command_prefix='>>')
@@ -10,5 +11,4 @@ async def on_connect():
 async  def on_ready():
     print('已上線')
 
-bot.run('OTM4NDIwNDUzNDMxNzM0MzE2.YfqCJw.QqjjVwGpOkwtYdinZLYhcXFBM-Q')
-
+bot.run('bKJMEFo-6qoRQerTcWHlj8G5SWuIdLVF')
