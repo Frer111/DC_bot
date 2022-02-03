@@ -11,4 +11,18 @@ async def on_connect():
 async  def on_ready():
     print('已上線')
 
-bot.run('bKJMEFo-6qoRQerTcWHlj8G5SWuIdLVF')
+@bot.event
+async def on_message(message):
+    #排除自己的訊息，避免陷入無限循環
+    if message.author == bot.user:
+        return
+    #如果以「說」開頭
+    if message.content.startswith('說'):
+      #分割訊息成兩份
+      tmp = message.content.split(" ",2)
+      #如果分割後串列長度只有1
+      if len(tmp) == 1:
+        await message.channel.send("好啦 閉嘴啦")
+      else:
+        await message.channel.send(tmp[1])
+bot.run('OTM4NDIwNDUzNDMxNzM0MzE2.YfqCJw.kGAw2YCqbNv7YRjfeebr8q0f2Ng')
